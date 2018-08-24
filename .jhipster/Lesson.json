@@ -1,0 +1,46 @@
+{
+    "name": "Lesson",
+    "fields": [
+        {
+            "fieldName": "lessonTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lessonDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "Language",
+            "fieldValues": "ENGLISH,SPANISH,HUNGARIAN,GERMAN"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "resources",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "lesson"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "courses",
+            "otherEntityName": "course",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "lessons"
+        }
+    ],
+    "changelogDate": "20180822180519",
+    "entityTableName": "lesson",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroService1"
+}
